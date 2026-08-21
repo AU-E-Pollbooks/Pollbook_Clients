@@ -1,0 +1,17 @@
+; Example configuration for the Trusted Client (trustedclient.py)
+; Copy this file to "config.ini" on the Raspberry Pi and fill in real values.
+; config.ini itself is gitignored so device-specific hosts/ports and key
+; paths never get committed.
+
+[Basic]
+client_id = 2
+checkin_service_host = 0.0.0.0
+checkin_service_port = 9000
+log_level = INFO
+
+[Security]
+; This client's own certificate/key pair, signed by the shared CA
+local_cert = certs/trusted_client_cert.pem
+private_key = certs/trusted_client_key.pem
+; CA certificate shared by all pollbook components
+ca_cert = certs/ca_cert.pem

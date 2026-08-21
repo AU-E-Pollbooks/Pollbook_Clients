@@ -1,0 +1,24 @@
+; Example configuration for the Untrusted Client (untrustedclient_ui_2Id.py)
+; Copy this file to "config.ini" on the Raspberry Pi and fill in real values.
+; config.ini itself is gitignored so device-specific hosts/ports and key
+; paths never get committed.
+
+[Basic]
+client_id = 1
+checkin_service_host = 0.0.0.0
+checkin_service_port = 9000
+id_service_host = 0.0.0.0
+id_service_port = 9001
+id_text_service_host = 0.0.0.0
+id_text_service_port = 9002
+
+[Security]
+; This client's own certificate/key pair, signed by the shared CA
+local_cert = certs/untrusted_client_cert.pem
+private_key = certs/untrusted_client_key.pem
+; CA certificate shared by all pollbook components
+ca_cert = certs/ca_cert.pem
+; Public keys used to verify signed responses from the ID services and
+; the check-in server
+id_service_public_key = certs/id_service_public_key.pem
+checkin_service_public_key = certs/checkin_service_public_key.pem

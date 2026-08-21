@@ -1,0 +1,28 @@
+# Runtime configuration (device-specific hosts/ports/paths) for both clients
+untrusted_client/config.ini
+trusted_client/config.ini
+
+# Keys, certs, and CSRs — never commit real key material
+*.pem
+*.key
+*.csr
+*.crt
+ca/
+certs/
+
+# Captured/processed ID images — may contain real photographed ID documents
+captured_id.jpg
+processed_id_debug.jpg
+processed_voter_id_client.jpg
+
+# Latency logs generated at runtime
+checkin_latency_log.csv
+trusted_checkin_latency_log.csv
+untrusted_latency.log
+
+# Python
+__pycache__/
+*.pyc
+
+# OS/editor cruft
+.DS_Store
